@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.fragments.GameFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:id="@+id/id_game_img"/>
+
+    <ImageView
+        android:id="@+id/id_game_img_money"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.15" />
+
+    <TextView
+        android:id="@+id/id_game_tv_money"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        android:layout_marginEnd="10dp"
+        android:text="coins: 0"
+        android:textSize="30sp"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintEnd_toStartOf="@id/id_game_img_money"
+        app:layout_constraintTop_toTopOf="@id/id_game_img_money"
+        app:layout_constraintBottom_toBottomOf="@id/id_game_img_money"/>
+
+    <TextView
+        android:id="@+id/id_game_tv_numbers_bingo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/coiny"
+        android:text="- - - - - -"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_game_tv_money"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/id_game_rv"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        tools:listitem="@layout/item_rv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_game_tv_numbers_bingo"
+        app:layout_constraintWidth_percent="0.95"
+        app:layout_constraintHeight_percent="0.5"/>
+
+    <TextView
+        android:id="@+id/id_game_tv_desc_swipe"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        android:textSize="30sp"
+        android:text="swipe your finger to the left to change the numbers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_game_rv"
+        app:layout_constraintWidth_percent="0.95"
+        app:layout_constraintHeight_percent="0.1"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/id_game_button_pick"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        style="@style/ButtonMenuStyle"
+        android:textColor="@color/white"
+        android:text="PICK"
+        android:fontFamily="@font/coiny"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_game_tv_desc_swipe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="0.45"
+        app:layout_constraintEnd_toStartOf="@id/id_game_button_finish"
+        app:layout_constraintHeight_percent="0.12"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/id_game_button_finish"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        style="@style/ButtonMenuStyle"
+        android:textColor="@color/white"
+        android:text="finish"
+        android:fontFamily="@font/coiny"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_game_tv_desc_swipe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/id_game_button_pick"
+        app:layout_constraintWidth_percent="0.45"
+        app:layout_constraintHeight_percent="0.12"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

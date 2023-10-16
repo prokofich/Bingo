@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.fragments.SettingsFragment">
+
+    <ImageView
+        android:id="@+id/id_settings_img"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="SETTINGS"
+        android:fontFamily="@font/coiny"
+        android:textSize="42sp"
+        android:id="@+id/id_settings_tv_title"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.6"
+        app:layout_constraintHeight_percent="0.1"/>
+
+    <TextView
+        android:id="@+id/id_settings_tv_title_rules"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:fontFamily="@font/coiny"
+        android:textSize="32sp"
+        android:text="rules of the game:"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_settings_tv_title"/>
+
+    <TextView
+        android:id="@+id/id_settings_tv_rules"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textSize="27sp"
+        android:text=""
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_settings_tv_title_rules"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintHeight_percent="0.4"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/id_settings_button_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/image_back"
+        app:layout_constraintWidth_percent="0.13"
+        app:layout_constraintHeight_percent="0.05"
+        app:layout_constraintTop_toTopOf="@id/id_settings_tv_title"
+        app:layout_constraintEnd_toStartOf="@id/id_settings_tv_title"/>
+
+
+    <TextView
+        android:id="@+id/id_settings_tv_coins"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        android:text="your coins:0"
+        android:textSize="30sp"
+        app:layout_constraintHeight_percent="0.07"
+        app:layout_constraintStart_toStartOf="@id/id_settings_button_add_money"
+        app:layout_constraintEnd_toEndOf="@id/id_settings_button_add_money"
+        app:layout_constraintBottom_toTopOf="@id/id_settings_button_add_money"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/id_settings_button_add_money"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textColor="@color/white"
+        android:text="GET A PRIZE"
+        android:fontFamily="@font/coiny"
+        android:textSize="30sp"
+        style="@style/ButtonMenuStyle"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintWidth_percent="0.6"
+        app:layout_constraintHeight_percent="0.12"
+        app:layout_constraintTop_toBottomOf="@id/id_settings_tv_rules"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/id_settings_img_money2"
+        app:layout_constraintWidth_percent="0.15"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/id_settings_button_add_money"
+        app:layout_constraintTop_toTopOf="@id/id_settings_button_add_money"
+        app:layout_constraintBottom_toBottomOf="@id/id_settings_button_add_money"/>
+
+    <ImageView
+        android:id="@+id/id_settings_img_money1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.15"
+        app:layout_constraintHeight_percent="0.08"
+        app:layout_constraintEnd_toStartOf="@id/id_settings_button_add_money"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/id_settings_button_add_money"
+        app:layout_constraintBottom_toBottomOf="@id/id_settings_button_add_money"/>
+
+    <TextView
+        android:id="@+id/id_settings_tv_message"
+        android:layout_width="0dp"
+        android:visibility="visible"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"
+        android:text=""
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/id_settings_button_add_money"
+        app:layout_constraintWidth_percent="0.95"
+        app:layout_constraintHeight_percent="0.08"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
