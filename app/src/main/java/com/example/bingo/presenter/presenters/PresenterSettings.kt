@@ -1,6 +1,8 @@
 package com.example.bingo.presenter.presenters
 
 import android.content.Context
+import android.os.Handler
+import android.os.Looper
 import com.example.bingo.constant.LIST_COINS_FOR_REPLENISH
 import com.example.bingo.constant.SHORT_DURATION
 import com.example.bingo.constant.URL_JSON_FILE
@@ -9,11 +11,14 @@ import com.example.bingo.presenter.presenterInterface.PresenterSettingsInterface
 import com.example.bingo.presenter.repository.Repository
 import com.example.bingo.presenter.viewInterface.ViewSettingsInterface
 import com.google.gson.Gson
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
+import okhttp3.internal.http2.Http2Reader
 import java.io.IOException
 
 class PresenterSettings(private val view:ViewSettingsInterface):PresenterSettingsInterface {
@@ -33,7 +38,9 @@ class PresenterSettings(private val view:ViewSettingsInterface):PresenterSetting
             override fun onResponse(call: Call, response: Response) {
                 val responseBody = response.body?.string()
                 val responseFromServer = Gson().fromJson(responseBody,ResponseGet::class.java)
-                view.showTextRules(responseFromServer.text)
+                Handler(Looper.getMainLooper()).post {
+                    view.showTextRules(responseFromServer.text)
+                }
             }
         })
     }
