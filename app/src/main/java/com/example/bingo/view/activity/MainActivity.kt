@@ -11,18 +11,16 @@ import com.example.bingo.constant.LAST_DAY
 import com.example.bingo.constant.MAIN
 import com.example.bingo.constant.MY_CASH_ACCOUNT
 import com.example.bingo.databinding.ActivityMainBinding
-import com.example.bingo.view.fragments.GameFragment
 import com.example.bingo.view.fragments.MenuFragment
-import com.example.bingo.view.fragments.SettingsFragment
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private var binding: ActivityMainBinding? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
+        val view = binding?.root
         setContentView(view)
 
         //изначальный показ фрагмента меню

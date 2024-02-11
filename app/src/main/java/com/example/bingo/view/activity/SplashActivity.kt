@@ -8,11 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import coil.load
 import coil.size.Scale
-import com.example.bingo.R
 import com.example.bingo.constant.APP_PREFERENCES
 import com.example.bingo.constant.ID
 import com.example.bingo.constant.URL_IMAGE_SPLASH_BACKGROUND
-import com.example.bingo.databinding.ActivityMainBinding
 import com.example.bingo.databinding.ActivitySplashBinding
 import com.example.bingo.presenter.model.ResponsePost
 import com.example.bingo.presenter.repository.Repository
@@ -31,17 +29,17 @@ import java.util.UUID
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivitySplashBinding
+    private var binding: ActivitySplashBinding? = null
     private val repository = Repository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
-        val view = binding.root
+        val view = binding?.root
         setContentView(view)
 
         //загрузка фоновой картинки
-        binding.idSplashImg.load(URL_IMAGE_SPLASH_BACKGROUND){ scale(Scale.FILL) }
+        binding?.idSplashImg?.load(URL_IMAGE_SPLASH_BACKGROUND){ scale(Scale.FILL) }
 
         val namePhone = Build.MODEL.toString()
         val locale = Locale.getDefault().displayLanguage.toString()

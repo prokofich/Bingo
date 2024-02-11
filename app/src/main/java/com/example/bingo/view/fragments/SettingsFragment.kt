@@ -38,11 +38,11 @@ class SettingsFragment : Fragment(),ViewSettingsInterface {
         super.onViewCreated(view, savedInstanceState)
 
         //загрузка фоновой картинки
-        binding!!.idSettingsImg.load(URL_IMAGE_BACKGROUND){ scale(Scale.FILL) }
+        binding?.idSettingsImg?.load(URL_IMAGE_BACKGROUND){ scale(Scale.FILL) }
 
         //загрузка картинки монеты
-        binding!!.idSettingsImgMoney1.load(URL_IMAGE_COINS){ scale(Scale.FIT) }
-        binding!!.idSettingsImgMoney2.load(URL_IMAGE_COINS){ scale(Scale.FIT) }
+        binding?.idSettingsImgMoney1?.load(URL_IMAGE_COINS){ scale(Scale.FIT) }
+        binding?.idSettingsImgMoney2?.load(URL_IMAGE_COINS){ scale(Scale.FIT) }
 
         //загрузка количества монет
         presenterSettings.loadMyCoins()
@@ -51,7 +51,7 @@ class SettingsFragment : Fragment(),ViewSettingsInterface {
         presenterSettings.loadTextRules()
 
         //вернуться в меню
-        binding!!.idSettingsButtonBack.setOnClickListener {
+        binding?.idSettingsButtonBack?.setOnClickListener {
             repository.showMenuFragment()
         }
 
@@ -61,7 +61,7 @@ class SettingsFragment : Fragment(),ViewSettingsInterface {
         }
 
         //пополнение монет
-        binding!!.idSettingsButtonAddMoney.setOnClickListener {
+        binding?.idSettingsButtonAddMoney?.setOnClickListener {
             if(presenterSettings.checkLastDay()){
                 //можно
                 presenterSettings.loadNewCoinsForReplenish(requireContext())
@@ -81,21 +81,21 @@ class SettingsFragment : Fragment(),ViewSettingsInterface {
     }
 
     override fun showTextRules(text: String) {
-        binding!!.idSettingsTvRules.text = text
+        binding?.idSettingsTvRules?.text = text
     }
 
     @SuppressLint("SetTextI18n")
     override fun showTextCoins(coins: Int) {
-        binding!!.idSettingsTvCoins.text = "your coins:$coins"
+        binding?.idSettingsTvCoins?.text = "your coins:$coins"
     }
 
     @SuppressLint("SetTextI18n")
     override fun showMessageForReplenish(coins: Int) {
-        binding!!.idSettingsTvMessage.text = "replenishment for $coins coins"
+        binding?.idSettingsTvMessage?.text = "replenishment for $coins coins"
     }
 
     override fun showMessageForCancelReplenish(text: String) {
-        binding!!.idSettingsTvMessage.text = text
+        binding?.idSettingsTvMessage?.text = text
     }
 
     override fun showToast(context: Context, message: String, duration: String) {

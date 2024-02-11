@@ -11,14 +11,11 @@ import com.example.bingo.presenter.presenterInterface.PresenterSettingsInterface
 import com.example.bingo.presenter.repository.Repository
 import com.example.bingo.presenter.viewInterface.ViewSettingsInterface
 import com.google.gson.Gson
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
-import okhttp3.internal.http2.Http2Reader
 import java.io.IOException
 
 class PresenterSettings(private val view:ViewSettingsInterface):PresenterSettingsInterface {

@@ -29,20 +29,20 @@ class MenuFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         //загрузка фоновой картинки
-        binding!!.idMenuImg.load(URL_IMAGE_BACKGROUND){scale(Scale.FILL)}
+        binding?.idMenuImg?.load(URL_IMAGE_BACKGROUND){scale(Scale.FILL)}
 
         //переход к игре
-        binding!!.idMenuButtonPlay.setOnClickListener {
+        binding?.idMenuButtonPlay?.setOnClickListener {
             repository.showGameFragment()
         }
 
         //переход к настройкам
-        binding!!.idMenuButtonSettings.setOnClickListener {
+        binding?.idMenuButtonSettings?.setOnClickListener {
             repository.showSettingsFragment()
         }
 
         //выход из игры
-        binding!!.idMenuButtonQuit.setOnClickListener {
+        binding?.idMenuButtonQuit?.setOnClickListener {
             repository.exitingTheApplication()
         }
 

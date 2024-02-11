@@ -78,15 +78,14 @@ class Repository {
         return "$year.$month.$day"
     }
 
-    fun createJsonFile(namePhone:String,locale:String,id:String): String {
-        val json = """
+    fun createJsonFile(namePhone: String, locale: String, id: String): String {
+        return """
                       {
                        "phone_name": "$namePhone",
                        "locale": "$locale",
                        "unique": "$id"
                       }
                       """.trimIndent()
-        return json
     }
 
 }
